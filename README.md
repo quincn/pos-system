@@ -1,69 +1,69 @@
-# CodeIgniter 4 Application Starter
+# Point-of-Sale (POS) System
 
-## What is CodeIgniter?
+A basic four-page Point-of-Sale (POS) system developed using **CodeIgniter 4** for a laboratory activity.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Features
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+The application contains four pages:
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- **Home** - Landing page of the POS system
+- **About** - Information about the application
+- **Customer Accounts** - Displays customer records
+- **User Accounts** - Displays user/staff records
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Routes
 
-## Installation & updates
+| Page | Route |
+|---|---|
+| Home | `/` |
+| About | `/about` |
+| Customer Accounts | `/customers` |
+| User Accounts | `/users` |
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Customer Accounts
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Customer records are stored temporarily using a static PHP array.
 
-## Setup
+Each customer contains:
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+- Full Name
+- Email
+- Phone
 
-## Important Change with index.php
+The records are displayed in the view using a PHP `foreach` loop.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## User Accounts
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+User/staff records are also stored temporarily using a static PHP array.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Each user contains:
 
-## Repository Management
+- Username
+- Full Name
+- Role
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+The records are displayed in the view using a PHP `foreach` loop.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+## Data Source
 
-## Server Requirements
+This version of the application does **not use a database**.
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+Static PHP arrays are used as temporary data sources for the Customer Accounts and User Accounts pages, as required by the laboratory activity.
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+Therefore, there is no database export for this version of the project.
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+## Technologies Used
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- PHP
+- CodeIgniter 4
+- Composer
+- HTML
+- Git
+- GitHub
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/quincn/pos-system.git
